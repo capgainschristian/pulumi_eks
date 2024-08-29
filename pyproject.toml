@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "pulumi-eks"
+version = "0.1.0"
+description = ""
+authors = ["capgainschristian <graham_christian@bah.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pulumi = "^3.130.0"
+pulumi-aws = "^6.50.1"
+pulumi-kubernetes = "^4.17.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

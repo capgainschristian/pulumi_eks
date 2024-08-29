@@ -1,0 +1,4 @@
+
+name: pulumi_eks
+runtime: python
+description: An EKS cluster project using Pulumi with Poetry
