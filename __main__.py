@@ -1,6 +1,5 @@
 import pulumi
 import pulumi_aws as aws
-import pulumi_kubernetes as k8s
 import json
 
 # Create a VPC for our cluster
