@@ -75,11 +75,11 @@ aws.iam.RolePolicyAttachment("eks-policy",
 
 eks_cluster = aws.eks.Cluster("eks-cluster",
     role_arn=eks_role.arn,
-    version="1.24",
+    version="1.28",
     vpc_config=aws.eks.ClusterVpcConfigArgs(
         subnet_ids=[public_subnet_1.id, public_subnet_2.id],
     ),
-    tags={"Name": "eks-cluster"}
+    tags={"Name": "eks-cluster"},
 )
 
 # Create an IAM role for the node group
@@ -117,9 +117,9 @@ node_group = aws.eks.NodeGroup("eks-node-group",
     node_role_arn=node_group_role.arn,
     subnet_ids=[public_subnet_1.id, public_subnet_2.id],
     scaling_config=aws.eks.NodeGroupScalingConfigArgs(
-        desired_size=2,
-        max_size=2,
-        min_size=1
+        min_size=3,
+        max_size=5,
+        desired_size=4,
     ),
     instance_types=["t3.medium"],
     tags={"Name": "eks-node-group"}
